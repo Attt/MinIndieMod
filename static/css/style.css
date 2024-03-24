@@ -1,0 +1,28 @@
+html {overflow-y: scroll}
+:root { --bgcolor: #f8f8f2; --fontcolor: #282a36; --linkcolor: #00e; --visitedcolor: #00e; --precolor: #fff; --prebgcolor: #000; --alertbgcolor: white; --hrcolor: #00e; --blockquotecolor: white; --pcodecolor: #000}
+@media (prefers-color-scheme: dark) { :root { --bgcolor: #282a36; --fontcolor: #f8f8f2; --linkcolor: #3395ff; --visitedcolor: #3395ff; --precolor: #f8f8f2; --prebgcolor: #383838; --alertbgcolor: #44475a; --hrcolor: #f8f8f2; --blockquotecolor: #44475a; --pcodecolor: #6272a4}}
+body{max-width:800px;margin:40px auto;padding:0 10px;font:14px/1.5 monospace;color:var(--fontcolor); background: var(--bgcolor)}
+a:link{color: var(--linkcolor)}a:visited{color: var(--visitedcolor)}a:active{color: var(--visitedcolor)}
+h1,h2,h3{line-height:1.2;color:#3395ff;font-size:2em;}h2{padding-top:15px}h3{padding-top:10px;font-size:1em;}
+p{margin-top:1.5rem;}
+p > code, li > code{color: var(--precolor); background: var(--pcodecolor); padding:2px}
+code{color: var(--precolor); background: var(--prebgcolor); padding:2px}
+pre{color: var(--precolor); background: var(--prebgcolor); padding:24px; overflow-x: auto}
+article{padding:24px 0}
+.center {display: block;margin-left: auto;margin-right: auto;width: 100%;}
+figcaption {color: #888; font: 12px/1.5 monospace; text-align: center;}
+figure {margin: auto}
+img {display: block; max-width: 100%; height: auto; margin: auto}
+.avatar {width: 128px; height: 128px;border-radius: 50%;}
+.alert{color: var(--fontcolor); background: var(--alertbgcolor); padding:24px; overflow-x: auto}
+.article-nextprev{display:flex; flex-flow: row wrap-reverse; justify-content: space-between;}
+hr{margin:35px 33% 15px; border-color: var(--hrcolor); border-width:3px;}
+hr.small{margin:35px 44% 25px; border:1px dashed var(--hrcolor);}
+blockquote{background: var(--blockquotecolor); margin: auto; padding: 5px 25px;}
+ul{padding-left: 1rem;}li{list-style-type: disclosure-closed;}
+.toc{border: 1px solid var(--hrcolor); margin:0.5rem; padding:0rem 2rem;}
+
+/* Custom CSS */
+a{word-break: break-all;}
+table, th, td {border: 2px solid grey;border-collapse: collapse;}
+table{min-width: 100%;}

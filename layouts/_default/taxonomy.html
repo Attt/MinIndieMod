@@ -1,0 +1,45 @@
+{{ define "main" }}
+{{ $pageTitle := .Title }}
+<main>
+    <div>
+        <h1>
+            {{ .Title }}
+            <a href="{{ .Permalink }}index.xml">
+                <img style="height:1.5rem; display: inline;" src="/images/RSS_icon.svg" alt="RSS icon" />
+            </a>
+        </h1>
+        <div>
+            {{ .Content }}
+        </div>
+        {{- if eq .Kind "taxonomy" -}}
+            <ul>
+                {{ range .Pages.ByTitle }}
+                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                {{ end }}
+            </ul>
+        {{ end }}
+        {{- if eq .Kind "term" -}}
+        <p>Content linked to the taxonomy term « {{ strings.ToUpper .Title }} »:</p>
+            {{ $currentType := "" }}
+            {{ range sort .Pages.ByDate.Reverse ".Type" "desc" }}
+                {{ if or (eq $currentType "") (ne $currentType .Type) }}
+                    {{ if ne $currentType "" }}
+                    </ul>
+                </div>
+                    {{ end }}
+                <div>
+                    <h3>{{ strings.FirstUpper .Type }}</h3>
+                    <ul>
+                {{ end }}
+                        <li>
+                            <time class="date dt-published" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+                            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        </li>
+                {{ $currentType = .Type }}
+            {{ end }}
+                    </ul>
+                </div>
+        {{- end -}}
+    </div>
+</main>
+{{ end }}
