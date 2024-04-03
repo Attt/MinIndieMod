@@ -2,12 +2,13 @@
 {{ $pageTitle := .Title }}
 <main>
     <div>
-        <h1>
+        <!-- <h1>
             {{ .Title }}
             <a href="{{ .Permalink }}index.xml">
                 <img style="height:1.5rem; display: inline;" src="/images/RSS_icon.svg" alt="RSS icon" />
             </a>
-        </h1>
+        </h1> -->
+        <a href="{{ .RelPermalink }}index.xml"><img style="height:1rem; display: inline;" src="/images/RSS_icon.svg" alt="RSS icon" /></a>
         <div>
             {{ .Content }}
         </div>
